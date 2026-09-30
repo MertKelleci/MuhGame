@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ofml4ux5yahr"]
+
+[ext_resource type="PackedScene" uid="uid://bm2xaoo5p4xwf" path="res://scenes/player/player.tscn" id="1_2262g"]
+
+[sub_resource type="Environment" id="Environment_0ar0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ar0v"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ar0v"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7ra8"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i7ra8"]
+size = Vector3(20, 2, 20)
+
+[node name="Main" type="Node" unique_id=1505858388]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=998584316]
+environment = SubResource("Environment_0ar0v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=736086274]
+transform = Transform3D(1, 0, 0, 0, 0.3440026, 0.93896866, 0, -0.93896866, 0.3440026, 0, 32, 26.803425)
+shadow_enabled = true
+
+[node name="Geometry" type="Node3D" parent="." unique_id=1008828238]
+
+[node name="Ground" type="StaticBody3D" parent="Geometry" unique_id=2003143843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Ground" unique_id=354995404]
+shape = SubResource("BoxShape3D_0ar0v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Ground" unique_id=159816044]
+mesh = SubResource("BoxMesh_0ar0v")
+
+[node name="CrouchCheck" type="StaticBody3D" parent="Geometry" unique_id=439828171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/CrouchCheck" unique_id=433420361]
+shape = SubResource("BoxShape3D_i7ra8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/CrouchCheck" unique_id=1615159953]
+mesh = SubResource("BoxMesh_i7ra8")
+
+[node name="Player" parent="." unique_id=1109983876 instance=ExtResource("1_2262g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.839247, 1, 20.469278)
