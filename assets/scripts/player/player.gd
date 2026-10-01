@@ -1,9 +1,13 @@
 class_name PlayerController extends CharacterBody3D
+@export var debug : bool = false
+@export_category("Character Variables")
 @export var acceleration : float = 1.0
 @export var decaleration : float = 0.8
-@export var debug : bool = false
+@export var jump_velocity : float = 5.0
+@export_category("Character Speed Settings")
 @export var walking_speed : float = 6.0
 @export var running_speed : float = 10.0
+@export var crouching_speed : float = 4.0
 @export_category("References")
 @export var camera : CameraController
 @export var state_chart : StateChart
@@ -48,4 +52,13 @@ func is_running(val : bool) -> void:
 		_character_speed = running_speed
 	else:
 		_character_speed = walking_speed
+		
+func is_crouching(val : bool) -> void:
+	if val:
+		_character_speed = crouching_speed
+	else:
+		_character_speed = walking_speed
+		
+func jump() -> void:
+	velocity.y += jump_velocity
 	

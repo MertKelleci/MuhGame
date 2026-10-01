@@ -11,3 +11,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	#if player_controller:
+		#player_controller.state_chart.set_expression_property("Text", Value)
