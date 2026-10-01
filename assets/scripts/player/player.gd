@@ -2,6 +2,8 @@ class_name PlayerController extends CharacterBody3D
 @export var acceleration : float = 1.0
 @export var decaleration : float = 0.8
 @export var debug : bool = false
+@export var walking_speed : float = 6.0
+@export var running_speed : float = 10.0
 @export_category("References")
 @export var camera : CameraController
 @export var state_chart : StateChart
@@ -9,7 +11,7 @@ class_name PlayerController extends CharacterBody3D
 
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
-var speed : float = 10.0
+var _character_speed = walking_speed
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_exit"):
@@ -30,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	var direction = (transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized()
 	
 	if direction:
-		current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * speed, acceleration)
+		current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * _character_speed, acceleration)
 	else:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, decaleration)
 		
@@ -40,3 +42,10 @@ func _physics_process(delta: float) -> void:
 
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input)
+
+func is_running(val : bool) -> void:
+	if val:
+		_character_speed = running_speed
+	else:
+		_character_speed = walking_speed
+	
