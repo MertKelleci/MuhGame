@@ -11,6 +11,12 @@ var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var speed : float = 10.0
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("dev_exit"):
+		get_tree().quit()
+	
+	if Input.is_action_just_pressed("dev_reload"):
+		get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
