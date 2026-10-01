@@ -1,6 +1,11 @@
 class_name PlayerController extends CharacterBody3D
 @export var acceleration : float = 1.0
 @export var decaleration : float = 0.8
+@export var debug : bool = false
+@export_category("References")
+@export var camera : CameraController
+@export var state_chart : StateChart
+@export var standing_collision : CollisionShape3D
 
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
@@ -19,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	var direction = (transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized()
 	
 	if direction:
-		print(_input_dir)
 		current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * speed, acceleration)
 	else:
 		current_velocity = current_velocity.move_toward(Vector2.ZERO, decaleration)
