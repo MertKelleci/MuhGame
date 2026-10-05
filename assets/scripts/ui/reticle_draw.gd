@@ -17,7 +17,7 @@ func draw_circle_crosshair() -> void:
 		#Bottom right quadrant
 		[gap_rad/2, PI/2 - gap_rad/2],
 		#Bottom left quadrant
-		[PI/2 + gap_rad/2, PI/2 - gap_rad/2],
+		[PI/2 + gap_rad/2, PI - gap_rad/2],
 		#Top left quadrant
 		[PI + gap_rad/2, 3*PI/2 - gap_rad/2],
 		#Top right quadrant
@@ -27,19 +27,37 @@ func draw_circle_crosshair() -> void:
 	for arc in arc_segments:
 		var start_angle = arc[0]
 		var end_angle = arc[1]
+		
+		var points = []
+		var angle_step = (end_angle - start_angle) / segments
+		
+		for i in range(segments + 1):
+			var angle = start_angle + i * angle_step
+			var point = Vector2(radius * cos(angle), radius * sin(angle))
+			points.append(point)
+			
+		if points.size() > 1:
+			draw_polyline(points, color, thickness, true)
 
+func update_crosshair() -> void:
+	queue_redraw()
 
 func set_crosshair_radius(val : float) -> void:
-	pass
+	radius = val
+	update_crosshair()
 	
 func set_crosshair_thickness(val : float) -> void:
-	pass
+	thickness = val
+	update_crosshair()
 
 func set_crosshair_color(val : Color) -> void:
-	pass
+	color = val
+	update_crosshair()
 
 func set_crosshair_gap_angle(val : float) -> void:
-	pass
+	gap_angle = val
+	update_crosshair()
 
 func set_crosshair_segments(val : int) -> void:
-	pass
+	segments = val
+	update_crosshair()

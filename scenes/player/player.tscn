@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cwwdrsngcl6d4" path="res://assets/scripts/player/camera_controller.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://bhu8nmoryhhpe" path="res://assets/scripts/player/player.gd" id="1_gmlin"]
 [ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="2_fm80t"]
+[ext_resource type="Script" uid="uid://k358dme2el8b" path="res://assets/scripts/player/components/interaction_raycast.gd" id="4_8ydkj"]
 [ext_resource type="Script" uid="uid://d1uxaw6kr4k61" path="res://assets/scripts/player/state_machine.gd" id="4_lvxji"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="5_5gtgg"]
 [ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="6_h17s1"]
@@ -24,15 +25,16 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ar0v"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision")]
+[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision", "interaction_raycast")]
 script = ExtResource("1_gmlin")
 camera = NodePath("CameraController")
 state_chart = NodePath("StateChart")
 standing_collision = NodePath("PlayerCollision")
+interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
 
 [node name="StateChartDebugger" parent="." unique_id=1685024043 instance=ExtResource("2_fm80t")]
-offset_right = -951.0
-offset_bottom = -358.0
+offset_right = -701.0
+offset_bottom = -359.0
 initial_node_to_watch = NodePath("../StateChart")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=267194439]
@@ -49,6 +51,10 @@ debug = true
 player_controller = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1135062602]
+
+[node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=144641857]
+target_position = Vector3(0, 0, -3)
+script = ExtResource("4_8ydkj")
 
 [node name="Components" type="Node" parent="." unique_id=841358851]
 

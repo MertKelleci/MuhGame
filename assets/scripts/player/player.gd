@@ -12,6 +12,7 @@ class_name PlayerController extends CharacterBody3D
 @export var camera : CameraController
 @export var state_chart : StateChart
 @export var standing_collision : CollisionShape3D
+@export var interaction_raycast : RayCast3D
 
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
