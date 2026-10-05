@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cwwdrsngcl6d4" path="res://assets/scripts/player/camera_controller.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://bhu8nmoryhhpe" path="res://assets/scripts/player/player.gd" id="1_gmlin"]
 [ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="2_fm80t"]
+[ext_resource type="Script" uid="uid://crwa66kwal4p5" path="res://assets/scripts/player/components/camera_effects.gd" id="4_3j4b4"]
 [ext_resource type="Script" uid="uid://k358dme2el8b" path="res://assets/scripts/player/components/interaction_raycast.gd" id="4_8ydkj"]
 [ext_resource type="Script" uid="uid://d1uxaw6kr4k61" path="res://assets/scripts/player/state_machine.gd" id="4_lvxji"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="5_5gtgg"]
@@ -51,6 +52,7 @@ debug = true
 player_controller = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=1135062602]
+script = ExtResource("4_3j4b4")
 
 [node name="InteractionRaycast" type="RayCast3D" parent="CameraController/Camera3D" unique_id=144641857]
 target_position = Vector3(0, 0, -3)
