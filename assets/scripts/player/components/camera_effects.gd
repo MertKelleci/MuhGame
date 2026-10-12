@@ -5,6 +5,7 @@ class_name CameraEffects extends Camera3D
 @export_category("Effects")
 @export var enable_tilt : bool = true
 @export var enable_fall_kick : bool = true
+@export var enable_damage_kick := true
 
 @export_category("Kick & Recoil Settings")
 @export_category("Run Tilt")
@@ -15,9 +16,15 @@ class_name CameraEffects extends Camera3D
 @export_group("Camera Kick")
 @export_subgroup("Fall Kick")
 @export var fall_time := 0.3
+@export_subgroup("Damage Kick")
+@export var damage_time := 0.3
 
 var _fall_timer := 0.0
 var _fall_value := 0.0
+
+var _damage_pitch := 0.0
+var _damage_roll := 0.0
+var _damage_timer := 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,6 +38,7 @@ func calculate_view_offset(delta: float) -> void:
 		return
 	
 	_fall_timer -= delta
+	_damage_timer -= delta
 	
 	var angles = Vector3.ZERO
 	var offset = Vector3.ZERO
@@ -55,9 +63,30 @@ func calculate_view_offset(delta: float) -> void:
 		angles.x -= fall_kick_amount
 		offset.y -= fall_kick_amount
 		
+	if enable_damage_kick:
+		var damage_ratio = max(0.0, _damage_timer/damage_time)
+		# damage_ratio = ease(damage_ratio, -2) # If you want the effect to be over time
+		angles.x += damage_ratio * _damage_pitch
+		angles.z += damage_ratio * _damage_roll
+		
 	position = offset
 	rotation = angles
 	
 func add_fall_kick(fall_strength: float) -> void:
 	_fall_value = deg_to_rad(fall_strength)
 	_fall_timer = fall_time
+	
+func add_damage_kick(pitch: float, roll: float, source: Vector3):
+	var forward = global_transform.basis.z
+	var right = global_transform.basis.x
+	
+	# The direction from the player to the damage source
+	var direction = global_position.direction_to(source)
+	
+	# Comparing the direction of the damage source to the direction of the player
+	# For example, if the source is directly in front of the player, forward_dot will be 1.0, while roll_dot will be 0.0
+	var forward_dot = direction.dot(forward)
+	var right_dot = direction.dot(right)
+	_damage_pitch = deg_to_rad(pitch) * forward_dot
+	_damage_roll = deg_to_rad(roll) * right_dot
+	_damage_timer = damage_time
