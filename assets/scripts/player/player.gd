@@ -3,7 +3,9 @@ class_name PlayerController extends CharacterBody3D
 @export_category("Character Variables")
 @export var acceleration : float = 1.0
 @export var decaleration : float = 0.8
+@export_category("Jump Settings")
 @export var jump_velocity : float = 5.0
+@export var fall_velocity_threshold := -5.0
 @export_category("Character Speed Settings")
 @export var walking_speed : float = 6.0
 @export var running_speed : float = 10.0
@@ -18,6 +20,7 @@ class_name PlayerController extends CharacterBody3D
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var _character_speed = walking_speed
+var current_fall_velocity : float
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_exit"):
@@ -63,4 +66,12 @@ func is_crouching(val : bool) -> void:
 		
 func jump() -> void:
 	velocity.y += jump_velocity
+	
+func check_fall_velocity() -> bool:
+	if current_fall_velocity < fall_velocity_threshold:
+		current_fall_velocity = 0.0
+		return true
+	else:
+		current_fall_velocity = 0.0
+		return false
 	
