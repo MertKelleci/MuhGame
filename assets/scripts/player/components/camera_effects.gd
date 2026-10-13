@@ -8,6 +8,7 @@ class_name CameraEffects extends Camera3D
 @export var enable_damage_kick := true
 @export var enable_weapon_kick := true
 @export var enable_screen_shake := true
+@export var enable_headbob := true
  
 @export_category("Kick & Recoil Settings")
 @export_category("Run Tilt")
@@ -22,6 +23,11 @@ class_name CameraEffects extends Camera3D
 @export var damage_time := 0.3
 @export_subgroup("Weapon Kick")
 @export var weapon_decay := 0.5
+@export_subgroup("Headbob")
+@export_range(0.0, 0.1, 0.001) var bob_pitch := 0.05
+@export_range(0.0, 0.1, 0.001) var bob_roll := 0.025
+@export_range(0.0, 0.04, 0.001) var bob_up := 0.005
+@export_range(3.0, 8.0, 0.1) var bob_frequency := 6.0
 
 var _fall_timer := 0.0
 var _fall_value := 0.0
@@ -35,6 +41,8 @@ var _weapon_kick_angles := Vector3.ZERO
 var _screen_shake_tween : Tween
 const _MIN_SCREEN_SHAKE := 0.05
 const _MAX_SCREEN_SHAKE := 0.5
+
+var _step_timer := 0.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +58,14 @@ func calculate_view_offset(delta: float) -> void:
 	
 	_fall_timer -= delta
 	_damage_timer -= delta
+	
+	var speed = Vector2(player.velocity.x, player.velocity.z).length()
+	if speed > 0.1 and player.is_on_floor():
+		_step_timer += delta * (speed/bob_frequency)
+		_step_timer = fmod(_step_timer, 1.0)
+	else:
+		_step_timer = 0.0
+	var bob_sin = sin(_step_timer*2.0*PI) * 0.5 # 0.5 reduces the magnitude of the bob
 	
 	var angles = Vector3.ZERO
 	var offset = Vector3.ZERO
@@ -83,6 +99,11 @@ func calculate_view_offset(delta: float) -> void:
 	if enable_weapon_kick:
 		_weapon_kick_angles = _weapon_kick_angles.move_toward(Vector3.ZERO, weapon_decay*delta)
 		angles += _weapon_kick_angles
+	
+	if enable_headbob:
+		angles.x -= bob_sin * deg_to_rad(bob_pitch) * speed
+		angles.z -= bob_sin * deg_to_rad(bob_roll) * speed
+		angles.y += bob_sin * speed * bob_up
 		
 	position = offset
 	rotation = angles
