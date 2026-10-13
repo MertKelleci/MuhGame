@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ofml4ux5yahr"]
 
 [ext_resource type="PackedScene" uid="uid://bm2xaoo5p4xwf" path="res://scenes/player/player.tscn" id="1_2262g"]
+[ext_resource type="PackedScene" uid="uid://qowwmibrl6yh" path="res://scenes/environment/enemy.tscn" id="2_wdj6m"]
 
 [sub_resource type="Environment" id="Environment_0ar0v"]
 
@@ -47,3 +48,9 @@ mesh = SubResource("BoxMesh_i7ra8")
 
 [node name="Player" parent="." unique_id=1109983876 instance=ExtResource("1_2262g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.839247, 1, 16.054424)
+
+[node name="Node3D" parent="." unique_id=975965276 node_paths=PackedStringArray("player") instance=ExtResource("2_wdj6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7541122, 1, 18.55857)
+player = NodePath("../Player")
+pitch = 2.0
+roll = 2.0

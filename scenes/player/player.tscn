@@ -27,12 +27,13 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ar0v"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision", "interaction_raycast")]
+[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision", "interaction_raycast", "camera_effects")]
 script = ExtResource("1_gmlin")
 camera = NodePath("CameraController")
 state_chart = NodePath("StateChart")
 standing_collision = NodePath("PlayerCollision")
 interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
+camera_effects = NodePath("CameraController/Camera3D")
 
 [node name="StateChartDebugger" parent="." unique_id=1685024043 instance=ExtResource("2_fm80t")]
 offset_right = -701.0
