@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="QuakeMapFile"
+uid="uid://k2lv5g4glkxk"
+path="res://.godot/imported/test_2.map-fd2aae9cc1afa83f63fd57f7ed18a2e0.tres"
+
+[deps]
+
+source_file="res://trenchbroom/maps/test_2.map"
+dest_files=["res://.godot/imported/test_2.map-fd2aae9cc1afa83f63fd57f7ed18a2e0.tres"]
+
+[params]
+

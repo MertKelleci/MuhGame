@@ -2,9 +2,11 @@
 
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_swwuq"]
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="2_i7rrt"]
+[ext_resource type="Resource" uid="uid://dk1t1cj3qd5me" path="res://trenchbroom/fgd/solid/func_moving_platform.tres" id="2_v00ny"]
 
 [resource]
 script = ExtResource("2_i7rrt")
 fgd_name = "muh_game"
 base_fgd_files = Array[Resource]([ExtResource("1_swwuq")])
+entity_definitions = Array[Resource]([ExtResource("2_v00ny")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"
