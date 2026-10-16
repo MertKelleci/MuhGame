@@ -30,7 +30,7 @@
 {
 "classname" "func_moving_platform"
 "move_direction" "0 1 0"
-"move_distance" "2.0"
+"move_distance" "8.0"
 "move_time" "2.0"
 // brush 0
 {
@@ -41,4 +41,44 @@
 ( -112 32 48 ) ( -112 32 112 ) ( -176 32 112 ) t_floormetal1 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( -112 -32 112 ) ( -112 32 112 ) ( -112 32 48 ) t_floormetal1 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
+}
+// entity 2
+{
+"classname" "func_light"
+"origin" "184 296 184"
+}
+// entity 3
+{
+"classname" "func_light"
+"origin" "248 296 184"
+}
+// entity 4
+{
+"classname" "func_light"
+"origin" "616 296 184"
+}
+// entity 5
+{
+"classname" "func_light"
+"origin" "952 296 136"
+}
+// entity 6
+{
+"classname" "func_light"
+"origin" "-232 296 200"
+}
+// entity 7
+{
+"classname" "func_light"
+"origin" "-152 40 88"
+}
+// entity 8
+{
+"classname" "func_light"
+"origin" "-104 8 88"
+}
+// entity 9
+{
+"classname" "func_light"
+"origin" "-184 8 88"
 }

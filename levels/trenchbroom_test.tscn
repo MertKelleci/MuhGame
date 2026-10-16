@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://7y14ydrpyxx" path="res://trenchbroom/textures/t_floormetal1.tres" id="4_4fmsh"]
 [ext_resource type="Script" uid="uid://b4m7v400kfj3f" path="res://assets/scripts/environment/moving_platform.gd" id="5_4fmsh"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_erruu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4fmsh"]
 _surfaces = [{
 "aabb": AABB(-39.5, -0.5, -10.5, 49.5, 1, 49),
 "attribute_data": PackedByteArray("AAAgwAAAAL4AAB5BAAAAvgAAHkEAAAA+AAAgwAAAAD4AABpBAAAAPgAAKMAAAAA+AAAowAAAAL4AABpBAAAAvgAAGsEAAB5BAAAawQAAIMAAAChAAAAgwAAAKEAAAB5BAAAaQQAAHkEAACjAAAAeQQAAKMAAACDAAAAaQQAAIMAAABrBAAAAvgAAKEAAAAC+AAAoQAAAAD4AABrBAAAAPgAAIEAAAAA+AAAewQAAAD4AAB7BAAAAvgAAIEAAAAC+"),
@@ -33,13 +33,13 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAgQQAAIEEAACjBAAAYQQAAIEEAACjBAAAYQQAAAD8AACjBAAAgQQAAAD8AACjBAAAYQQAAAD8AABpCAAAYQQAAAD8AACjBAAAYQQAAIEEAACjBAAAYQQAAIEEAABpCAAAYQQAAAD8AABpCAAAgQQAAAD8AABpCAAAgQQAAAD8AACjBAAAYQQAAAD8AACjBAAAYQQAAIEEAABpCAAAYQQAAIEEAACjBAAAgQQAAIEEAACjBAAAgQQAAIEEAABpCAAAgQQAAIEEAABpCAAAgQQAAIEEAACjBAAAgQQAAAD8AACjBAAAgQQAAAD8AABpCAAAgQQAAAD8AABpCAAAYQQAAAD8AABpCAAAYQQAAIEEAABpCAAAgQQAAIEEAABpC/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ecmv3"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_erruu"]
 points = PackedVector3Array(10, 0.5, 38.5, 10, -0.5, 38.5, -39.5, 0.5, 38.5, -39.5, -0.5, 38.5, 10, 0.5, -10.5, 10, -0.5, -10.5, -39.5, 0.5, -10.5, -39.5, -0.5, -10.5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2uxs1"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ecmv3"]
 points = PackedVector3Array(10, 10, 38.5, 10, 0.5, 38.5, 9.5, 10, 38.5, 9.5, 0.5, 38.5, 10, 10, -10.5, 10, 0.5, -10.5, 9.5, 10, -10.5, 9.5, 0.5, -10.5)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kh7hi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2uxs1"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1, 2, 2, 2),
 "attribute_data": PackedByteArray("AACAvgAAYL8AAIA+AABgvwAAgD4AAMC+AACAvgAAwL4AAGC/AADAvgAAsL8AAMC+AACwvwAAYL8AAGC/AABgvwAAYD8AAIA+AABgPwAAgL4AALA/AACAvgAAsD8AAIA+AABgvwAAgD4AALC/AACAPgAAsL8AAIC+AABgvwAAgL4AAGA/AABgvwAAsD8AAGC/AACwPwAAwL4AAGA/AADAvgAAgD4AAMC+AACAvgAAwL4AAIC+AABgvwAAgD4AAGC/"),
@@ -54,7 +54,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AACAPwAAgD8AAIC/AACAvwAAgD8AAIC/AACAvwAAgL8AAIC/AACAPwAAgL8AAIC/AACAvwAAgL8AAIA/AACAvwAAgL8AAIC/AACAvwAAgD8AAIC/AACAvwAAgD8AAIA/AACAvwAAgL8AAIA/AACAPwAAgL8AAIA/AACAPwAAgL8AAIC/AACAvwAAgL8AAIC/AACAvwAAgD8AAIA/AACAvwAAgD8AAIC/AACAPwAAgD8AAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIC/AACAPwAAgL8AAIC/AACAPwAAgL8AAIA/AACAPwAAgL8AAIA/AACAvwAAgL8AAIA/AACAvwAAgD8AAIA/AACAPwAAgD8AAIA//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3vrlg"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kh7hi"]
 points = PackedVector3Array(1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1)
 
 [node name="TrenchbroomTest" type="Node3D" unique_id=295145062]
@@ -65,24 +65,49 @@ local_map_file = "uid://k2lv5g4glkxk"
 map_settings = ExtResource("2_ssd6y")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=820927953]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1179477076]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1670128714]
-mesh = SubResource("ArrayMesh_erruu")
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1441676161]
+mesh = SubResource("ArrayMesh_4fmsh")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1308220955]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=246746649]
+shape = SubResource("ConvexPolygonShape3D_erruu")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=507143025]
 shape = SubResource("ConvexPolygonShape3D_ecmv3")
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=2108404331]
-shape = SubResource("ConvexPolygonShape3D_2uxs1")
-
-[node name="entity_1_func_moving_platform" type="AnimatableBody3D" parent="FuncGodotMap" unique_id=1129876341]
+[node name="entity_1_func_moving_platform" type="AnimatableBody3D" parent="FuncGodotMap" unique_id=1535697949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.5)
 script = ExtResource("5_4fmsh")
+move_distance = 8.0
 
-[node name="entity_1_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_1_func_moving_platform" unique_id=1301044046]
-mesh = SubResource("ArrayMesh_kh7hi")
+[node name="entity_1_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_1_func_moving_platform" unique_id=1537740584]
+mesh = SubResource("ArrayMesh_2uxs1")
 
-[node name="entity_1_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_1_func_moving_platform" unique_id=369492305]
-shape = SubResource("ConvexPolygonShape3D_3vrlg")
+[node name="entity_1_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_1_func_moving_platform" unique_id=368739892]
+shape = SubResource("ConvexPolygonShape3D_kh7hi")
+
+[node name="entity_2_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=1308351012]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.25, 5.75, 5.75)
+
+[node name="entity_3_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=371917311]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.25, 5.75, 7.75)
+
+[node name="entity_4_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=1085821649]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.25, 5.75, 19.25)
+
+[node name="entity_5_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=1245112525]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.25, 4.25, 29.75)
+
+[node name="entity_6_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=787430053]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.25, 6.25, -7.25)
+
+[node name="entity_7_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=2105060718]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.25, 2.75, -4.75)
+
+[node name="entity_8_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=1048504258]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.25, 2.75, -3.25)
+
+[node name="entity_9_func_light" type="OmniLight3D" parent="FuncGodotMap" unique_id=314115991]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.25, 2.75, -5.75)
