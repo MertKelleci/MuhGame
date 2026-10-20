@@ -42,8 +42,8 @@ interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
 camera_effects = NodePath("CameraController/Camera3D")
 
 [node name="StateChartDebugger" parent="." unique_id=1685024043 instance=ExtResource("2_fm80t")]
-offset_right = -701.0
-offset_bottom = -359.0
+offset_right = -913.0
+offset_bottom = -348.0
 initial_node_to_watch = NodePath("../StateChart")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="." unique_id=267194439]
@@ -244,9 +244,10 @@ script = ExtResource("17_uf5tr")
 script = ExtResource("5_5gtgg")
 metadata/_custom_type_script = "uid://couw105c3bde4"
 
-[node name="Root" type="Node" parent="WeaponStateChart" unique_id=405005562]
-script = ExtResource("6_h17s1")
-metadata/_custom_type_script = "uid://c1vp0ojjvaby1"
+[node name="Root" type="Node" parent="WeaponStateChart" unique_id=2067592604]
+script = ExtResource("7_je7p5")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
 
 [node name="FiringState" type="Node" parent="WeaponStateChart/Root" unique_id=835461888]
 script = ExtResource("8_fm80t")
