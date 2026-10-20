@@ -15,12 +15,12 @@ func _ready() -> void:
 func spawn_weapon_model() -> void:
 	if current_weapon_model:
 		current_weapon_model.queue_free()
-		current_ammo = current_weapon.max_ammo
 	
 	if current_weapon.weapon_model:
 		current_weapon_model = current_weapon.weapon_model.instantiate()
 		weapon_model_parent.add_child(current_weapon_model)
 		current_weapon_model.position = current_weapon.weapon_position
+		current_ammo = current_weapon.max_ammo
 
 func can_fire() -> bool:
 	return current_ammo > 0
@@ -28,4 +28,4 @@ func can_fire() -> bool:
 func fire_weapon() -> void:
 	if can_fire():
 		current_ammo -= 1
-		print("Weapon fired")
+		print("Weapon fired. Remaining ammo: ", current_ammo)
