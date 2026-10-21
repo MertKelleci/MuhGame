@@ -6,6 +6,8 @@ func _on_idle_state_state_processing(delta: float) -> void:
 		return
 		
 	if Input.is_action_just_pressed("fire") and weapon_controller.can_fire():
+		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+			return
 		weapon_controller.weapon_state_chart.send_event("onFiring")
 	
 	if weapon_controller.current_ammo <= 0:

@@ -21,6 +21,7 @@ var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 var _character_speed = walking_speed
 var current_fall_velocity : float
+var _debug_history := false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("dev_exit"):

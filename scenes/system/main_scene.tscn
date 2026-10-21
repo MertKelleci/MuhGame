@@ -12,6 +12,7 @@
 [node name="Main" parent="CurrentLevel" unique_id=1505858388 instance=ExtResource("1_mgb3u")]
 
 [node name="UserInterface" type="CanvasLayer" parent="." unique_id=1368330061]
+layer = 0
 
 [node name="Reticle" type="CenterContainer" parent="UserInterface" unique_id=2104088281]
 anchors_preset = 15

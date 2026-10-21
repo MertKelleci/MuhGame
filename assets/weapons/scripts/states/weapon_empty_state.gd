@@ -1,7 +1,8 @@
 extends WeaponState
+@onready var state_chart_debugger: Control = %StateChartDebugger
 
 func _on_empty_state_state_entered() -> void:
-	print("Weapon empty")
+	state_chart_debugger.add_history_entry("Weapon empty")
 
 
 func _on_empty_state_state_processing(delta: float) -> void:

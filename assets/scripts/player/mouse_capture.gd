@@ -32,3 +32,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# This prevents the mouse movement from being cumulative
 	_mouse_input = Vector2.ZERO
+	
+	if Input.is_action_just_pressed("dev_change_mouse_mode"):
+		if current_mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			current_mouse_mode = Input.MOUSE_MODE_VISIBLE
+		elif current_mouse_mode == Input.MOUSE_MODE_VISIBLE:
+			current_mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
+		Input.mouse_mode = current_mouse_mode
+			
