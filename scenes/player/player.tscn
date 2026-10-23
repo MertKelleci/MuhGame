@@ -45,7 +45,7 @@ camera_effects = NodePath("CameraController/Camera3D")
 
 [node name="StateChartDebugger" parent="CanvasLayer" unique_id=1685024043 instance=ExtResource("2_fm80t")]
 unique_name_in_owner = true
-offset_right = -913.0
+offset_right = -699.0
 offset_bottom = -348.0
 initial_node_to_watch = NodePath("../../StateChart")
 ignore_events = true
@@ -79,9 +79,10 @@ script = ExtResource("4_8ydkj")
 script = ExtResource("1_8afob")
 camera_controller = NodePath("../../CameraController")
 
-[node name="WeaponController" type="Node" parent="Components" unique_id=761822529 node_paths=PackedStringArray("camera", "weapon_model_parent", "weapon_state_chart")]
+[node name="WeaponController" type="Node" parent="Components" unique_id=761822529 node_paths=PackedStringArray("camera", "camera_effects", "weapon_model_parent", "weapon_state_chart")]
 script = ExtResource("7_ioxgp")
 camera = NodePath("../../CameraController/Camera3D")
+camera_effects = NodePath("../../CameraController/Camera3D")
 current_weapon = ExtResource("8_cnsyf")
 weapon_model_parent = NodePath("../../CameraController/Camera3D")
 weapon_state_chart = NodePath("../../WeaponStateChart")
