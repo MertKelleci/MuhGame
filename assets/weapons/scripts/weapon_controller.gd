@@ -66,15 +66,18 @@ func _spawn_projectile() -> void:
 		state_chart_debugger.add_history_entry("No camera assigned")
 		return
 	
-	var projectile =  current_weapon.projectile_model.instantiate() as Projectile
-	get_tree().current_scene.add_child(projectile)
+	var projectile = current_weapon.projectile_model.instantiate() as Projectile
+	if projectile:
+		# 1. Position and setup first (while in memory)
+		projectile.global_position = camera.global_position - (camera.global_transform.basis.z * 1.5)
 	
-	projectile.global_position = camera.global_position
+		var forward = -camera.global_transform.basis.z
+		var velocity = current_weapon.projectile_speed * forward
+		projectile.look_at(projectile.global_position + forward)
+		projectile.setup(velocity, current_weapon.damage)
 	
-	var forward = -camera.global_transform.basis.z
-	var velocity = current_weapon.projectile_speed * forward
-	state_chart_debugger.add_history_entry("Projectile forward: "+str(forward)+" \nProjectile Velocity: "+str(velocity))
-	projectile.setup(velocity, current_weapon.damage)
+		# 2. Add to scene tree last
+		get_tree().current_scene.add_child(projectile)
 
 func _spawn_impact_marker(position: Vector3, object: Node) -> void:
 	var marker = MeshInstance3D.new()

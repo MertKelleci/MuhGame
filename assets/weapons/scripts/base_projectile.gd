@@ -2,12 +2,12 @@ class_name Projectile extends Area3D
 var velocity: Vector3
 var damage: float
 
-func ready() -> void:
+func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	get_tree().create_timer(3.0).timeout.connect(queue_free)
 	
 func _physics_process(delta: float) -> void:
-	global_position += velocity
+	global_position += velocity * delta
 	
 func setup(vel: Vector3, dmg: float) -> void:
 	velocity = vel
