@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_0uk5e")
+accuracy = 75
 weapon_type = 1
 weapon_model = ExtResource("2_ibn3s")
 projectile_model = ExtResource("1_uwekg")

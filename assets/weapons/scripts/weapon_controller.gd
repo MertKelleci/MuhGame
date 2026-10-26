@@ -47,8 +47,12 @@ func _perform_hitscan() -> void:
 	
 	var space_state = camera.get_world_3d().direct_space_state
 	var from = camera.global_position
+	var accuracy_spread = (100 - current_weapon.accuracy) / 1000.0
 	var forward = -camera.global_transform.basis.z
-	var to = from + forward * current_weapon.range
+	var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
+	var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
+	var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * camera.global_transform.basis
+	var to = from + direction * current_weapon.range
 	
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	var result = space_state.intersect_ray(query)
@@ -72,8 +76,12 @@ func _spawn_projectile() -> void:
 		projectile.global_position = camera.global_position - (camera.global_transform.basis.z * 1.5)
 	
 		var forward = -camera.global_transform.basis.z
-		var velocity = current_weapon.projectile_speed * forward
-		projectile.look_at(projectile.global_position + forward)
+		var accuracy_spread = (100 - current_weapon.accuracy) / 1000.0
+		var accuracy_x = randf_range(-accuracy_spread, accuracy_spread)
+		var accuracy_y = randf_range(-accuracy_spread, accuracy_spread)
+		var direction = forward + Vector3(accuracy_x, accuracy_y, 0) * camera.global_transform.basis
+		var velocity = current_weapon.projectile_speed * direction
+		projectile.look_at(projectile.global_position + direction)
 		projectile.setup(velocity, current_weapon.damage)
 	
 		# 2. Add to scene tree last
