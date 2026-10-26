@@ -6,8 +6,9 @@
 
 [resource]
 script = ExtResource("1_0uk5e")
-accuracy = 75
-weapon_type = 1
+max_ammo = 120
+fire_rate = 8.0
+firing_mode = 1
 weapon_model = ExtResource("2_ibn3s")
 projectile_model = ExtResource("1_uwekg")
 metadata/_custom_type_script = "uid://cfun7phqa82r0"

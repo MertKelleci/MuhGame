@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="6_h17s1"]
 [ext_resource type="Script" uid="uid://b35rd5ydppad" path="res://assets/weapons/scripts/weapon_controller.gd" id="7_ioxgp"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="7_je7p5"]
-[ext_resource type="Resource" uid="uid://bwuibgr8d302k" path="res://assets/weapons/resources/pistol_weapon.tres" id="8_cnsyf"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="8_fm80t"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="9_gx1jg"]
 [ext_resource type="Script" uid="uid://ck6jnq5ga6qch" path="res://assets/scripts/player/states/player_state.gd" id="10_h17s1"]
@@ -33,13 +32,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ar0v"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision", "interaction_raycast", "camera_effects")]
+[node name="PlayerController" type="CharacterBody3D" unique_id=1109983876 node_paths=PackedStringArray("camera", "state_chart", "standing_collision", "interaction_raycast", "camera_effects", "weapon_controller") groups=["player"]]
 script = ExtResource("1_gmlin")
 camera = NodePath("CameraController")
 state_chart = NodePath("StateChart")
 standing_collision = NodePath("PlayerCollision")
 interaction_raycast = NodePath("CameraController/Camera3D/InteractionRaycast")
 camera_effects = NodePath("CameraController/Camera3D")
+weapon_controller = NodePath("Components/WeaponController")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1099150894]
 
@@ -83,7 +83,6 @@ camera_controller = NodePath("../../CameraController")
 script = ExtResource("7_ioxgp")
 camera = NodePath("../../CameraController/Camera3D")
 camera_effects = NodePath("../../CameraController/Camera3D")
-current_weapon = ExtResource("8_cnsyf")
 weapon_model_parent = NodePath("../../CameraController/Camera3D")
 weapon_state_chart = NodePath("../../WeaponStateChart")
 

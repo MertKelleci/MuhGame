@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://ofml4ux5yahr"]
 
-[ext_resource type="PackedScene" uid="uid://bm2xaoo5p4xwf" path="res://scenes/player/player.tscn" id="1_2262g"]
 [ext_resource type="PackedScene" uid="uid://n4yfrs0hks2a" path="res://levels/trenchbroom_test.tscn" id="1_l8qe7"]
-[ext_resource type="PackedScene" uid="uid://qowwmibrl6yh" path="res://scenes/environment/enemy.tscn" id="2_wdj6m"]
 
 [sub_resource type="Environment" id="Environment_0ar0v"]
 
@@ -16,12 +14,3 @@ environment = SubResource("Environment_0ar0v")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=736086274]
 transform = Transform3D(0.7910186, 0.0167878, -0.6115617, 0.61179215, -0.021705844, 0.7907208, 0, -0.99962354, -0.02744037, -33.872147, 32.523502, 15.305943)
 shadow_enabled = true
-
-[node name="Player" parent="." unique_id=1109983876 instance=ExtResource("1_2262g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.839247, 1, 16.054424)
-
-[node name="Node3D" parent="." unique_id=975965276 node_paths=PackedStringArray("player") instance=ExtResource("2_wdj6m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7541122, 1, 18.55857)
-player = NodePath("../Player")
-pitch = 2.0
-roll = 2.0

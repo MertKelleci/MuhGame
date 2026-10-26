@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dga81xja2m80e"]
+
+[ext_resource type="Script" uid="uid://cfun7phqa82r0" path="res://assets/weapons/scripts/weapon.gd" id="1_8knyc"]
+[ext_resource type="PackedScene" uid="uid://3qb8w8matdxp" path="res://scenes/player/weapons/projectile.tscn" id="1_n44a3"]
+[ext_resource type="PackedScene" uid="uid://bq0qc581tbsmv" path="res://scenes/player/weapons/pistol_weapon.tscn" id="3_pokag"]
+
+[resource]
+script = ExtResource("1_8knyc")
+weapon_name = "Lasergun"
+damage = 30.0
+weapon_type = 1
+weapon_model = ExtResource("3_pokag")
+projectile_model = ExtResource("1_n44a3")
+metadata/_custom_type_script = "uid://cfun7phqa82r0"

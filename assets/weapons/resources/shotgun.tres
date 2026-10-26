@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dgrxj5huwjb67"]
+
+[ext_resource type="Script" uid="uid://cfun7phqa82r0" path="res://assets/weapons/scripts/weapon.gd" id="1_u2qcu"]
+[ext_resource type="PackedScene" uid="uid://bq0qc581tbsmv" path="res://scenes/player/weapons/pistol_weapon.tscn" id="2_vdv7n"]
+
+[resource]
+script = ExtResource("1_u2qcu")
+weapon_name = "Shotgun"
+accuracy = 50
+pellet_count = 8
+spread_angle = 0.05
+weapon_position = Vector3(0.2, 0.2, -0.3)
+weapon_model = ExtResource("2_vdv7n")
+metadata/_custom_type_script = "uid://cfun7phqa82r0"

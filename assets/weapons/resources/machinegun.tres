@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bbdshvtswsokr"]
+
+[ext_resource type="Script" uid="uid://cfun7phqa82r0" path="res://assets/weapons/scripts/weapon.gd" id="1_cofh8"]
+[ext_resource type="PackedScene" uid="uid://bq0qc581tbsmv" path="res://scenes/player/weapons/pistol_weapon.tscn" id="2_p076p"]
+
+[resource]
+script = ExtResource("1_cofh8")
+weapon_name = "Machinegun"
+max_ammo = 25
+fire_rate = 8.0
+firing_mode = 1
+accuracy = 90
+weapon_position = Vector3(0.2, -0.5, -0.3)
+weapon_model = ExtResource("2_p076p")
+metadata/_custom_type_script = "uid://cfun7phqa82r0"
