@@ -125,6 +125,8 @@ func switch_weapon(new_weapon: WeaponData) -> void:
 	
 	if current_weapon_model:
 		current_weapon_model.queue_free()
-		
+	
+	weapon_state_chart.send_event("onIdle")
+	
 	spawn_weapon_model()
 	
