@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://n4yfrs0hks2a" path="res://levels/trenchbroom_test.tscn" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://b1h2o8ws81xqq" path="res://scenes/environment/pickups/weapon_pickup.tscn" id="2_wdj6m"]
+[ext_resource type="PackedScene" uid="uid://sql8imqx3h6d" path="res://scenes/environment/pickups/ammo_pickup.tscn" id="3_l8qe7"]
 
 [sub_resource type="Environment" id="Environment_0ar0v"]
 
@@ -18,3 +19,6 @@ shadow_enabled = true
 
 [node name="WeaponPickup" parent="." unique_id=265721877 instance=ExtResource("2_wdj6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.640596, 1.0850496, 20.907415)
+
+[node name="AmmoPickup" parent="." unique_id=1505558102 instance=ExtResource("3_l8qe7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0098953, 1.0631772, 24.161695)

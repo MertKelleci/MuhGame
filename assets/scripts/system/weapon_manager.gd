@@ -31,10 +31,13 @@ func switch_to_slot(slot: int) -> void:
 	if weapon_data and weapon_data.unlocked:
 		current_slot = slot
 		player.weapon_controller.switch_weapon(weapon_data)
+		player.state_chart.set_expression_property("Current Weapon", weapon_data.weapon.weapon_name)
+		update_ammo_count()
 		
 func use_ammo(slot: int, amount: int = 1) -> void:
 	if slot in weapons:
 		weapons[slot].ammo = max(0, weapons[slot].ammo - amount)
+		update_ammo_count()
 		
 func unlock_weapon(slot: int, weapon_data: WeaponData) -> void:
 	weapons[slot].unlocked = true
@@ -48,4 +51,7 @@ func init_starting_weapon() -> void:
 		if weapons.has(slot) and weapons[slot].unlocked:
 			switch_to_slot(slot)
 			return
+			
+func update_ammo_count() -> void:
+	player.state_chart.set_expression_property("Ammo", weapons[current_slot].ammo)
 		
