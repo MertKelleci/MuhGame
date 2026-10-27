@@ -4,6 +4,7 @@ class_name WeaponManager extends Node
 @export var player: PlayerController
 
 var current_slot := 1
+var _first_available_slot
 
 func _ready() -> void:
 	add_to_group("weapon_manager")
@@ -35,6 +36,12 @@ func use_ammo(slot: int, amount: int = 1) -> void:
 	if slot in weapons:
 		weapons[slot].ammo = max(0, weapons[slot].ammo - amount)
 		
+func unlock_weapon(slot: int, weapon_data: WeaponData) -> void:
+	for i in weapons:
+		if weapons[i] == weapon_data:
+			weapons[i].unlocked = true
+			switch_to_slot(i)
+			
 func get_current_ammo() -> int:
 	return weapons[current_slot].ammo
 
