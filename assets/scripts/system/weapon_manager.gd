@@ -37,10 +37,8 @@ func use_ammo(slot: int, amount: int = 1) -> void:
 		weapons[slot].ammo = max(0, weapons[slot].ammo - amount)
 		
 func unlock_weapon(slot: int, weapon_data: WeaponData) -> void:
-	for i in weapons:
-		if weapons[i] == weapon_data:
-			weapons[i].unlocked = true
-			switch_to_slot(i)
+	weapons[slot].unlocked = true
+	weapons[slot].ammo = weapons[slot].weapon.max_ammo
 			
 func get_current_ammo() -> int:
 	return weapons[current_slot].ammo

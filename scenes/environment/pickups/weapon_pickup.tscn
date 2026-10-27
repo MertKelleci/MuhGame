@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b1h2o8ws81xqq"]
+
+[ext_resource type="PackedScene" uid="uid://bg6hq01quorfn" path="res://scenes/environment/pickups/base_pickup.tscn" id="1_urris"]
+[ext_resource type="Script" uid="uid://crg7k46wxd31v" path="res://assets/scripts/environment/pickups/weapon_pickup.gd" id="2_6c8sy"]
+[ext_resource type="Resource" uid="uid://dgrxj5huwjb67" path="res://assets/weapons/resources/shotgun.tres" id="3_eisos"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ar0v"]
+radius = 0.1
+height = 0.5
+
+[node name="WeaponPickup" unique_id=265721877 instance=ExtResource("1_urris")]
+script = ExtResource("2_6c8sy")
+weapon_slot = 2
+weapon_resource = ExtResource("3_eisos")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=359654230]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_0ar0v")

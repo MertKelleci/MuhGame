@@ -16,3 +16,6 @@ enum WeaponTypes {RAYCAST, PROJECTILE}
 @export var weapon_position := Vector3(0.2, -0.2, -0.3)
 @export var weapon_model : PackedScene
 @export var projectile_model : PackedScene
+
+func equals(weapon: Weapon) -> bool:
+	return weapon.weapon_name == weapon_name

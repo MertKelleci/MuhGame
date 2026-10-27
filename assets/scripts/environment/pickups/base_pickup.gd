@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(rotation_speed) * delta)
 
 func _on_pickup(body: Node3D) -> void:
+	print(body)
 	if not body is PlayerController:
 		pass
 	
