@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b2fi32lg4pmc1"]
+
+[ext_resource type="Script" uid="uid://cntr2hqqsa6bn" path="res://assets/scripts/components/health_component.gd" id="1_stjwr"]
+[ext_resource type="Script" uid="uid://dqrcpalem0fq3" path="res://assets/scripts/enemies/simple_enemy.gd" id="1_xmblk"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_ynfxd"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_h45w0"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_xmblk"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_ckuuk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3duu5"]
+albedo_color = Color(1, 0, 0.5176471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ar0v"]
+material = SubResource("StandardMaterial3D_3duu5")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ar0v"]
+radius = 0.705
+height = 3.0
+
+[node name="SimpleEnemy" type="CharacterBody3D" unique_id=363075304]
+script = ExtResource("1_xmblk")
+follow_speed = null
+enemy_groups = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1046902450]
+transform = Transform3D(1, 0, 0, 0, 2.618144, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_0ar0v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=677159019]
+shape = SubResource("CapsuleShape3D_0ar0v")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=682701181]
+unique_name_in_owner = true
+script = ExtResource("1_stjwr")
+max_health = 50.0
+metadata/_custom_type_script = "uid://cntr2hqqsa6bn"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=262632484]
+unique_name_in_owner = true
+avoidance_enabled = true
+
+[node name="StateChart" type="Node" parent="." unique_id=1411879638]
+unique_name_in_owner = true
+script = ExtResource("2_ynfxd")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart" unique_id=1406422147]
+script = ExtResource("3_h45w0")
+initial_state = NodePath("FollowState")
+
+[node name="FollowState" type="Node" parent="StateChart/Root" unique_id=1391809418]
+script = ExtResource("4_xmblk")
+
+[node name="IdleState" type="Node" parent="StateChart/Root" unique_id=1920678627]
+script = ExtResource("4_xmblk")
+
+[node name="toIdle" type="Node" parent="StateChart/Root" unique_id=1581225624]
+script = ExtResource("5_ckuuk")
+to = NodePath("../IdleState")
+event = &"toIdle"
+delay_in_seconds = "0.0"
+
+[node name="toFollow" type="Node" parent="StateChart/Root" unique_id=2110880749]
+script = ExtResource("5_ckuuk")
+to = NodePath("../FollowState")
+event = &"toFollow"
+delay_in_seconds = "0.0"
