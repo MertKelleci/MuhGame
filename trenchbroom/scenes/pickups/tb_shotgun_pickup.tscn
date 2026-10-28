@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://xx4sucfshefv"]
+
+[ext_resource type="PackedScene" uid="uid://b1h2o8ws81xqq" path="res://scenes/environment/pickups/weapon_pickup.tscn" id="1_1et4m"]
+
+[node name="WeaponPickup" unique_id=265721877 instance=ExtResource("1_1et4m")]

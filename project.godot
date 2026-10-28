@@ -30,6 +30,20 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "red",
+"res://assets/": "orange",
+"res://levels/": "yellow",
+"res://scenes/": "green",
+"res://trenchbroom/": "teal"
+}
+
+[func_godot]
+
+model_point_class_save_path="trenchbroom/models/"
+
 [global_group]
 
 player=""

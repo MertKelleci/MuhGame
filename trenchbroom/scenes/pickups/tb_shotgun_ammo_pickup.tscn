@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://baneoy2aj07at"]
+
+[ext_resource type="PackedScene" uid="uid://sql8imqx3h6d" path="res://scenes/environment/pickups/ammo_pickup.tscn" id="1_4jp12"]
+
+[node name="AmmoPickup" unique_id=265721877 instance=ExtResource("1_4jp12")]
+transform = Transform3D(-0.26805112, 0, 0.9634118, 0, 1, 0, -0.9634118, 0, -0.26805112, 0, 0.01885531, 0)

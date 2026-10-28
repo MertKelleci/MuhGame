@@ -82,3 +82,20 @@
 "classname" "func_light"
 "origin" "-184 8 88"
 }
+// entity 10
+{
+"classname" "item_shotgun_pickup"
+"origin" "680 -584 40"
+}
+// entity 11
+{
+"classname" "item_shotgun_ammo_pickup"
+"origin" "696 136 40"
+"ammo_amount" "20"
+}
+// entity 12
+{
+"classname" "DestroyableObject"
+"origin" "1016 104 24"
+"max_health" "100"
+}

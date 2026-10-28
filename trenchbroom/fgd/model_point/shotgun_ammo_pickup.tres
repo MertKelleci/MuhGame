@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://gsir7x3m6l4d"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_i14pf"]
+[ext_resource type="PackedScene" uid="uid://baneoy2aj07at" path="res://trenchbroom/scenes/pickups/tb_shotgun_ammo_pickup.tscn" id="2_i14pf"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="3_4stwk"]
+
+[resource]
+script = ExtResource("3_4stwk")
+target_map_editor = 1
+scene_file = ExtResource("2_i14pf")
+classname = "item_shotgun_ammo_pickup"
+description = "Pickup itme for shotgun ammo."
+class_properties = Dictionary[String, Variant]({
+"ammo_amount": 0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/models/item_shotgun_ammo_pickup.glb\", \"scale\": 32.0 }",
+"size": AABB(-8, -8, -8, 8, 8, 8)
+})
+node_class = "AmmoPickup"
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

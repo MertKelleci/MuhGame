@@ -1,0 +1,40 @@
+class_name HealthComponent extends Node
+
+signal health_changed(new_health:float, max_health:float)
+signal damage_taken(amount: float, source: Node3D)
+signal died()
+
+@export var max_health := 100.0
+@export var start_at_max := true
+
+var current_health := max_health
+var is_alive := true
+
+func take_damage(amount: float, source: Node3D = null) -> void:
+	if not is_alive:
+		return
+	
+	current_health = max(0.0, current_health - amount)
+	
+	damage_taken.emit(amount, source)
+	health_changed.emit(current_health, max_health)
+	
+	print(get_parent().name, " took ", amount, " damage. Health: ", current_health)
+	
+	if current_health <= 0:
+		_handle_death()
+
+func heal(amount: float) -> void:
+	if not is_alive:
+		return
+	
+	current_health = max(amount+current_health, max_health)
+	health_changed.emit(amount, max_health)
+
+func _handle_death() -> void:
+	is_alive = false
+	
+	current_health = 0.0
+	died.emit()
+	
+	print(get_parent().name," died.")

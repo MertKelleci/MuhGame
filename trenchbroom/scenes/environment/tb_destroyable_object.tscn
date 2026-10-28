@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://yqxcvbbpu6vn"]
+
+[ext_resource type="PackedScene" uid="uid://t2qodar6mvay" path="res://scenes/environment/destroyable_object.tscn" id="1_57oh5"]
+
+[node name="DestroyableObject" unique_id=579091087 instance=ExtResource("1_57oh5")]

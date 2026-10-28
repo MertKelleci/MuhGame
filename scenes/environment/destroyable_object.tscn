@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://t2qodar6mvay"]
+
+[ext_resource type="Script" uid="uid://cj0kw0nqac07b" path="res://assets/scripts/environment/destroyable_object.gd" id="1_0y8wp"]
+[ext_resource type="Script" uid="uid://cntr2hqqsa6bn" path="res://assets/scripts/components/health_component.gd" id="1_mt4li"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lcqn"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ar0v"]
+material = SubResource("StandardMaterial3D_2lcqn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ar0v"]
+
+[node name="DestroyableObject" type="StaticBody3D" unique_id=579091087]
+script = ExtResource("1_0y8wp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2078919756]
+mesh = SubResource("BoxMesh_0ar0v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1046598903]
+shape = SubResource("BoxShape3D_0ar0v")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1313089941]
+script = ExtResource("1_mt4li")
+max_health = 50.0
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

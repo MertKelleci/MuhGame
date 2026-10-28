@@ -4,10 +4,13 @@
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="2_i7rrt"]
 [ext_resource type="Resource" uid="uid://dk1t1cj3qd5me" path="res://trenchbroom/fgd/solid/func_moving_platform.tres" id="2_v00ny"]
 [ext_resource type="Resource" uid="uid://cu0yclptlbxu0" path="res://trenchbroom/fgd/point/func_light.tres" id="3_v00ny"]
+[ext_resource type="Resource" uid="uid://gsir7x3m6l4d" path="res://trenchbroom/fgd/model_point/shotgun_ammo_pickup.tres" id="4_27xyb"]
+[ext_resource type="Resource" uid="uid://tmxqi7esluln" path="res://trenchbroom/fgd/model_point/shotgun_pickup.tres" id="5_iwanm"]
+[ext_resource type="Resource" uid="uid://bj600dcx47od0" path="res://trenchbroom/fgd/model_point/env_destroyable_object.tres" id="6_iwanm"]
 
 [resource]
 script = ExtResource("2_i7rrt")
 fgd_name = "muh_game"
 base_fgd_files = Array[Resource]([ExtResource("1_swwuq")])
-entity_definitions = Array[Resource]([ExtResource("2_v00ny"), ExtResource("3_v00ny")])
+entity_definitions = Array[Resource]([ExtResource("2_v00ny"), ExtResource("3_v00ny"), ExtResource("4_27xyb"), ExtResource("5_iwanm"), ExtResource("6_iwanm")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

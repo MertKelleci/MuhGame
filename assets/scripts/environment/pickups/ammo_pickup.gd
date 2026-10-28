@@ -1,7 +1,11 @@
+@tool
 class_name AmmoPickup extends BasePickup
 
 @export var weapon_slot := 1
 @export var ammo_amount := 10
+
+func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
+	ammo_amount = entity_properties["ammo_amount"] as int
 
 func can_pickup(player: PlayerController) -> bool:
 	if weapon_slot not in Managers.weapon_manager.weapons:

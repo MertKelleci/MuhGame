@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://tmxqi7esluln"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_u8ar4"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_hkiww"]
+[ext_resource type="PackedScene" uid="uid://xx4sucfshefv" path="res://trenchbroom/scenes/pickups/tb_shotgun_pickup.tscn" id="2_s2h68"]
+
+[resource]
+script = ExtResource("2_hkiww")
+target_map_editor = 1
+scene_file = ExtResource("2_s2h68")
+classname = "item_shotgun_pickup"
+description = "Pickup item for shotgun."
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"trenchbroom/models/item_shotgun_pickup.glb\", \"scale\": 32.0 }",
+"size": AABB(-8, -8, -8, 8, 8, 8)
+})
+node_class = "WeaponPickup"
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

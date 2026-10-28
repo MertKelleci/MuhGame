@@ -77,6 +77,7 @@ func _perform_hitscan() -> void:
 		if result:
 			state_chart_debugger.add_history_entry("Hit: "+result.collider.name+" at "+str(result.position))
 			_spawn_impact_marker(result.position, result.collider)
+			_apply_damage_to_target(result.collider)
 
 func _spawn_projectile() -> void:
 	if not current_weapon.projectile_model:
@@ -130,3 +131,8 @@ func switch_weapon(new_weapon: WeaponData) -> void:
 	
 	spawn_weapon_model()
 	
+func _apply_damage_to_target(target: Node3D) -> void:
+	var health_component = target.get_node_or_null("HealthComponent")
+	
+	if health_component and health_component.has_method("take_damage"):
+		health_component.take_damage(current_weapon.damage, owner)

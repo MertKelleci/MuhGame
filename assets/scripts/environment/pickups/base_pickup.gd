@@ -1,3 +1,4 @@
+@tool
 class_name BasePickup extends Area3D
 
 @export var rotation_speed := 60.0
