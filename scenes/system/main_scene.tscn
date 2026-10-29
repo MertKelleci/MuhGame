@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qowwmibrl6yh" path="res://scenes/enemy/enemy.tscn" id="3_6aore"]
 [ext_resource type="Resource" uid="uid://be7cr0hcjadb5" path="res://assets/weapons/resources/pistol_data.tres" id="3_w0y2p"]
 [ext_resource type="Resource" uid="uid://dsotwlkcccy18" path="res://assets/weapons/resources/shotgun_data.tres" id="4_w0y2p"]
+[ext_resource type="PackedScene" uid="uid://b2fi32lg4pmc1" path="res://scenes/enemy/simple_enemy.tscn" id="9_rc0n7"]
 
 [node name="MainScene" type="Node" unique_id=560419092]
 
@@ -51,3 +52,15 @@ thickness = 3.0
 color = Color(0, 0.9993908, 0, 1)
 gap_angle = 20.0
 segments = 3
+
+[node name="SimpleEnemy" parent="." unique_id=363075304 instance=ExtResource("9_rc0n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.596134, 1.5, -3.1207078)
+
+[node name="SimpleEnemy2" parent="." unique_id=809752542 instance=ExtResource("9_rc0n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.615892, 1.4999999, -0.91438043)
+
+[node name="SimpleEnemy3" parent="." unique_id=1393066515 instance=ExtResource("9_rc0n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.510128, 1.5, -1.5656452)
+
+[node name="SimpleEnemy4" parent="." unique_id=2142068713 instance=ExtResource("9_rc0n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.448061, 1.5, -5.9243197)
