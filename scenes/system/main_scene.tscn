@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://yp763mocjrox" path="res://assets/scripts/ui/reticle_draw.gd" id="1_rtgv3"]
 [ext_resource type="Script" uid="uid://bxtlyuleyg2ue" path="res://assets/weapons/scripts/weapon_data.gd" id="2_i0w0i"]
 [ext_resource type="PackedScene" uid="uid://bm2xaoo5p4xwf" path="res://scenes/player/player.tscn" id="2_q6206"]
-[ext_resource type="PackedScene" uid="uid://qowwmibrl6yh" path="res://scenes/environment/enemy.tscn" id="3_6aore"]
+[ext_resource type="PackedScene" uid="uid://qowwmibrl6yh" path="res://scenes/enemy/enemy.tscn" id="3_6aore"]
 [ext_resource type="Resource" uid="uid://be7cr0hcjadb5" path="res://assets/weapons/resources/pistol_data.tres" id="3_w0y2p"]
 [ext_resource type="Resource" uid="uid://dsotwlkcccy18" path="res://assets/weapons/resources/shotgun_data.tres" id="4_w0y2p"]
 

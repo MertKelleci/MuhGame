@@ -47,6 +47,7 @@ model_point_class_save_path="trenchbroom/models/"
 [global_group]
 
 player=""
+geometry_trenchbroom_test=""
 
 [input]
 
