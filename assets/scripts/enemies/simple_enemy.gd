@@ -6,6 +6,7 @@ class_name SimpleEnemy extends BaseEnemy
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_player: AnimationPlayer = $"exported-model/AnimationPlayer"
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var triggerable: TriggerableComponent = $TriggerableComponent
 
 var target: Node3D
 var animation_tree_state: AnimationNodeStateMachinePlayback
@@ -41,6 +42,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func on_triggered() -> void:
+	state_chart.send_event("toFollow")
+	
+func get_targetname() -> String:
+	return triggerable.targetname if triggerable else ""
+
+func on_trigger(player) -> void:
 	state_chart.send_event("toFollow")
 	
 func _on_died() -> void:

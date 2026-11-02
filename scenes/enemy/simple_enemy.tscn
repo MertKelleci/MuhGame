@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7aruvp2er8vu" path="res://assets/models/enemies/exported-model.glb" id="2_ckuuk"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_ynfxd"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_h45w0"]
+[ext_resource type="Script" uid="uid://dyqe30s5a54nm" path="res://assets/scripts/components/triggerable_component.gd" id="4_du441"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_xmblk"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_ckuuk"]
 
@@ -168,6 +169,11 @@ unique_name_in_owner = true
 script = ExtResource("1_stjwr")
 max_health = 50.0
 metadata/_custom_type_script = "uid://cntr2hqqsa6bn"
+
+[node name="TriggerableComponent" type="Node" parent="." unique_id=1034457432]
+script = ExtResource("4_du441")
+targetname = "enemy1"
+metadata/_custom_type_script = "uid://dyqe30s5a54nm"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=262632484]
 unique_name_in_owner = true
